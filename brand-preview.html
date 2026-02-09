@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notioneers Brand Preview</title>
+  <style>
+    @font-face {
+      font-family: 'TWKLausanne';
+      src: url('assets/fonts/web/TWKLausanne-300.woff2') format('woff2'),
+           url('assets/fonts/web/TWKLausanne-300.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'TWKLausanne';
+      src: url('assets/fonts/web/TWKLausanne-600.woff2') format('woff2'),
+           url('assets/fonts/web/TWKLausanne-600.woff') format('woff');
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    :root {
+      --depth: #063312;
+      --halo: #F2F4F2;
+      --bloom: #92EF9A;
+      --shade: #0B1E0F;
+      --root: #454F45;
+      --stone: #7B847B;
+      --sage: #AFCAAF;
+      --veil: #D1E2D1;
+      --mist: #DEECDC;
+      --pulse: #61DB6B;
+      --grove: #172D1B;
+      --ease: #B5F5B7;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'TWKLausanne', -apple-system, sans-serif;
+      font-weight: 300;
+      color: var(--depth);
+      background: var(--halo);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+
+    h1 { font-size: 48px; font-weight: 300; margin-bottom: 8px; }
+    h2 { font-size: 36px; font-weight: 300; margin: 56px 0 24px; border-bottom: 1px solid var(--sage); padding-bottom: 12px; }
+    h3 { font-size: 24px; font-weight: 300; margin: 32px 0 16px; }
+    h4 { font-size: 20px; font-weight: 300; margin: 24px 0 12px; }
+    p { font-size: 16px; margin-bottom: 12px; }
+    .caption { font-size: 12px; color: var(--stone); }
+
+    .subtitle {
+      font-size: 20px;
+      color: var(--root);
+      margin-bottom: 8px;
+    }
+
+    .nav-link {
+      font-size: 14px;
+      color: var(--stone);
+      margin-bottom: 40px;
+      display: block;
+    }
+    .nav-link a {
+      color: #52B4D9;
+      text-decoration: underline;
+    }
+
+    /* Typography Preview */
+    .type-row {
+      display: flex;
+      align-items: baseline;
+      gap: 24px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--mist);
+    }
+
+    .type-label {
+      font-size: 12px;
+      font-family: monospace;
+      color: var(--stone);
+      min-width: 120px;
+    }
+
+    /* Color Swatches */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .swatch {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--sage);
+    }
+
+    .swatch-color { height: 72px; }
+
+    .swatch-info {
+      padding: 8px 12px;
+      background: white;
+    }
+
+    .swatch-name { font-size: 14px; }
+
+    .swatch-hex {
+      font-size: 12px;
+      color: var(--stone);
+      font-family: monospace;
+    }
+
+    /* Green Gradient */
+    .gradient-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      border: 1px solid var(--sage);
+    }
+
+    .gradient-cell {
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .gradient-cell span { font-size: 12px; }
+    .gradient-cell .g-hex { font-size: 10px; font-family: monospace; opacity: 0.7; }
+
+    /* Extended Palette */
+    .ext-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .ext-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--sage);
+    }
+
+    .ext-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 56px;
+    }
+
+    .ext-info { padding: 8px 12px; background: white; }
+    .ext-info .ext-name { font-size: 14px; }
+    .ext-info .ext-hexes { font-size: 10px; color: var(--stone); font-family: monospace; }
+
+    /* Logos */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .logo-cell {
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-cell img { max-height: 48px; max-width: 160px; }
+    .logo-cell.on-light { background: var(--halo); border: 1px solid var(--sage); }
+    .logo-cell.on-dark { background: var(--shade); border: 1px solid var(--root); }
+    .logo-cell .caption { text-align: center; }
+    .logo-cell.on-dark .caption { color: var(--sage); }
+
+    /* Icons */
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 12px;
+    }
+
+    .icon-cell {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 4px;
+      border-radius: 8px;
+    }
+
+    .icon-cell img { width: 40px; height: 40px; }
+    .icon-cell span { font-size: 10px; color: var(--stone); text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <h1>Notioneers</h1>
+    <p class="subtitle">Brand Guidelines Preview</p>
+    <span class="nav-link">→ <a href="ui-preview.html">UI Guidelines Preview</a></span>
+
+    <!-- Typography -->
+    <h2>Typography</h2>
+    <p>Font: TWKLausanne · Headings immer 300 (nie bold)</p>
+
+    <div class="type-row">
+      <span class="type-label">H1 · 48px · 300</span>
+      <span style="font-size:48px;font-weight:300;">Heading One</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">H2 · 36px · 300</span>
+      <span style="font-size:36px;font-weight:300;">Heading Two</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">H3 · 24px · 300</span>
+      <span style="font-size:24px;font-weight:300;">Heading Three</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">H4 · 20px · 300</span>
+      <span style="font-size:20px;font-weight:300;">Heading Four</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Body · 16px · 300</span>
+      <span style="font-size:16px;font-weight:300;">Systeme die befähigen, nicht einschränken.</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Small · 14px · 300</span>
+      <span style="font-size:14px;color:var(--depth);">Sekundärtext und ergänzende Informationen.</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Caption · 12px · 300</span>
+      <span class="caption">Labels, Timestamps, Hilfetext</span>
+    </div>
+    <div class="type-row">
+      <span class="type-label">Bold · 600</span>
+      <span style="font-weight:600;">Nur für Emphasis innerhalb von Fliesstext</span>
+    </div>
+
+    <!-- Colors -->
+    <h2>Colors</h2>
+
+    <h3>Green Scale</h3>
+    <div class="gradient-strip">
+      <div class="gradient-cell" style="background:#B5F5B7;color:#063312;"><span>Ease</span><span class="g-hex">#B5F5B7</span></div>
+      <div class="gradient-cell" style="background:#92EF9A;color:#063312;"><span>Bloom</span><span class="g-hex">#92EF9A</span></div>
+      <div class="gradient-cell" style="background:#61DB6B;color:#063312;"><span>Pulse</span><span class="g-hex">#61DB6B</span></div>
+      <div class="gradient-cell" style="background:#063312;color:#F2F4F2;"><span>Depth</span><span class="g-hex">#063312</span></div>
+      <div class="gradient-cell" style="background:#172D1B;color:#F2F4F2;"><span>Grove</span><span class="g-hex">#172D1B</span></div>
+      <div class="gradient-cell" style="background:#0B1E0F;color:#F2F4F2;"><span>Shade</span><span class="g-hex">#0B1E0F</span></div>
+    </div>
+
+    <h3>Primary</h3>
+    <div class="color-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#063312;"></div><div class="swatch-info"><div class="swatch-name">Depth</div><div class="swatch-hex">#063312</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F2F4F2;"></div><div class="swatch-info"><div class="swatch-name">Halo</div><div class="swatch-hex">#F2F4F2</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#92EF9A;"></div><div class="swatch-info"><div class="swatch-name">Bloom</div><div class="swatch-hex">#92EF9A</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#0B1E0F;"></div><div class="swatch-info"><div class="swatch-name">Shade</div><div class="swatch-hex">#0B1E0F</div></div></div>
+    </div>
+
+    <h3>Neutral</h3>
+    <div class="color-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#F2F4F2;"></div><div class="swatch-info"><div class="swatch-name">Halo</div><div class="swatch-hex">#F2F4F2</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#DEECDC;"></div><div class="swatch-info"><div class="swatch-name">Mist</div><div class="swatch-hex">#DEECDC</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#D1E2D1;"></div><div class="swatch-info"><div class="swatch-name">Veil</div><div class="swatch-hex">#D1E2D1</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#AFCAAF;"></div><div class="swatch-info"><div class="swatch-name">Sage</div><div class="swatch-hex">#AFCAAF</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#7B847B;"></div><div class="swatch-info"><div class="swatch-name">Stone</div><div class="swatch-hex">#7B847B</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#454F45;"></div><div class="swatch-info"><div class="swatch-name">Root</div><div class="swatch-hex">#454F45</div></div></div>
+    </div>
+
+    <h3>Accent</h3>
+    <div class="color-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#61DB6B;"></div><div class="swatch-info"><div class="swatch-name">Pulse</div><div class="swatch-hex">#61DB6B</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#172D1B;"></div><div class="swatch-info"><div class="swatch-name">Grove</div><div class="swatch-hex">#172D1B</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#B5F5B7;"></div><div class="swatch-info"><div class="swatch-name">Ease</div><div class="swatch-hex">#B5F5B7</div></div></div>
+    </div>
+
+    <h3>Extended Palette</h3>
+    <div class="ext-grid">
+      <div class="ext-card"><div class="ext-strip"><div style="background:#C1E2F1;"></div><div style="background:#ACD6EF;"></div><div style="background:#52B4D9;"></div></div><div class="ext-info"><div class="ext-name">Aeris</div><div class="ext-hexes">#C1E2F1 · #ACD6EF · #52B4D9</div></div></div>
+      <div class="ext-card"><div class="ext-strip"><div style="background:#BBB9FF;"></div><div style="background:#898AE3;"></div><div style="background:#5453CB;"></div></div><div class="ext-info"><div class="ext-name">Nimbus</div><div class="ext-hexes">#BBB9FF · #898AE3 · #5453CB</div></div></div>
+      <div class="ext-card"><div class="ext-strip"><div style="background:#F0D8FF;"></div><div style="background:#CBA8E8;"></div><div style="background:#BD73ED;"></div></div><div class="ext-info"><div class="ext-name">Muse</div><div class="ext-hexes">#F0D8FF · #CBA8E8 · #BD73ED</div></div></div>
+      <div class="ext-card"><div class="ext-strip"><div style="background:#FFD2D2;"></div><div style="background:#DBB0AF;"></div><div style="background:#ED6767;"></div></div><div class="ext-info"><div class="ext-name">Coral</div><div class="ext-hexes">#FFD2D2 · #DBB0AF · #ED6767</div></div></div>
+      <div class="ext-card"><div class="ext-strip"><div style="background:#FFF4D0;"></div><div style="background:#F9E8AF;"></div><div style="background:#FFDB76;"></div></div><div class="ext-info"><div class="ext-name">Solea</div><div class="ext-hexes">#FFF4D0 · #F9E8AF · #FFDB76</div></div></div>
+      <div class="ext-card"><div class="ext-strip"><div style="background:#F5DCBC;"></div><div style="background:#E5C0A8;"></div><div style="background:#F2AA7F;"></div></div><div class="ext-info"><div class="ext-name">Cove</div><div class="ext-hexes">#F5DCBC · #E5C0A8 · #F2AA7F</div></div></div>
+    </div>
+
+    <!-- Logos -->
+    <h2>Logos</h2>
+
+    <h3>Signet (N)</h3>
+    <div class="logo-grid">
+      <div class="logo-cell on-light"><img src="assets/logos/N-Depth-Halo.svg" alt="N-Depth-Halo"><span class="caption">N-Depth-Halo</span></div>
+      <div class="logo-cell on-light"><img src="assets/logos/N-Depth-Transparent.svg" alt="N-Depth-Transparent"><span class="caption">N-Depth-Transparent</span></div>
+      <div class="logo-cell on-dark"><img src="assets/logos/N-Bloom.svg" alt="N-Bloom"><span class="caption">N-Bloom</span></div>
+      <div class="logo-cell on-dark"><img src="assets/logos/N-Bloom-Eyes.svg" alt="N-Bloom-Eyes"><span class="caption">N-Bloom-Eyes</span></div>
+      <div class="logo-cell on-light"><img src="assets/logos/N-Eyes-Depth-Halo.svg" alt="N-Eyes-Depth-Halo"><span class="caption">N-Eyes-Depth-Halo</span></div>
+      <div class="logo-cell on-light"><img src="assets/logos/N-Circle-Depth-Halo.svg" alt="N-Circle-Depth-Halo"><span class="caption">N-Circle-Depth-Halo</span></div>
+      <div class="logo-cell on-dark"><img src="assets/logos/N-Circle-Bloom-Circle.svg" alt="N-Circle-Bloom-Circle"><span class="caption">N-Circle-Bloom-Circle</span></div>
+    </div>
+
+    <h3>Wortmarke</h3>
+    <div class="logo-grid">
+      <div class="logo-cell on-light"><img src="assets/logos/Notioneers-Depth-Halo.svg" alt="Notioneers-Depth-Halo"><span class="caption">Notioneers-Depth-Halo</span></div>
+      <div class="logo-cell on-light"><img src="assets/logos/Notioneers-Depth-Transparent.svg" alt="Notioneers-Depth-Transparent"><span class="caption">Notioneers-Depth-Transparent</span></div>
+      <div class="logo-cell on-light"><img src="assets/logos/Notioneers-Depth-Border.svg" alt="Notioneers-Depth-Border"><span class="caption">Notioneers-Depth-Border</span></div>
+      <div class="logo-cell on-dark"><img src="assets/logos/Notioneers-Bloom-Depth.svg" alt="Notioneers-Bloom-Depth"><span class="caption">Notioneers-Bloom-Depth</span></div>
+    </div>
+
+    <!-- Icons -->
+    <h2>Icons</h2>
+
+    <h3>Depth (auf hellem Hintergrund)</h3>
+    <div class="icon-grid" id="icons-depth"></div>
+
+    <h3>Mist-Round (mit Hintergrund)</h3>
+    <div class="icon-grid" id="icons-mist-round"></div>
+
+    <!-- Footer -->
+    <div style="margin-top:64px;padding-top:24px;border-top:1px solid var(--sage);text-align:center;">
+      <p class="caption">Notioneers Brand Guidelines Preview · v2.1</p>
+    </div>
+
+  </div>
+
+  <script>
+    const icons = ['Board','Book','Book-Open','Bookmark','Brain','Calc','Calendar-Cycle','Cash-Pie','Checkbox','Checklist','Circles','Clock','Eye','Flight','Folder','Goal','Hands','Heart','Lego','Light','Money','Mood','Network','Paint','Person','Question','Saving','Search','Settings','ThumbsUp','Web'];
+    function renderIcons(id, folder) {
+      const c = document.getElementById(id);
+      icons.forEach(n => { const d = document.createElement('div'); d.className = 'icon-cell'; d.innerHTML = `<img src="assets/icons/${folder}/${n}.svg" alt="${n}"><span>${n}</span>`; c.appendChild(d); });
+    }
+    renderIcons('icons-depth', 'depth');
+    renderIcons('icons-mist-round', 'mist-round');
+  </script>
+</body>
+</html>
