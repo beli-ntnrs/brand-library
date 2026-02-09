@@ -77,8 +77,8 @@ Nutze diese Farben sparsam für spezifische Use Cases:
 ```
 
 ### Font Weights
-- **Regular (300):** Fließtext, UI-Elemente
-- **Bold (600):** Überschriften, Buttons, Emphasis
+- **Regular (300):** Fließtext, UI-Elemente, Überschriften, Buttons
+- **Bold (600):** Nur für Emphasis innerhalb von Fließtext (z.B. `<strong>`)
 
 ### Verfügbare Schnitte
 
@@ -97,10 +97,10 @@ Desktop-Formate (OTF) liegen in `assets/fonts/desktop/`.
 
 | Element | Size | Weight | Line Height |
 |---------|------|--------|-------------|
-| H1 | 48px / 3rem | 600 | 1.2 |
-| H2 | 36px / 2.25rem | 600 | 1.25 |
-| H3 | 24px / 1.5rem | 600 | 1.3 |
-| H4 | 20px / 1.25rem | 600 | 1.4 |
+| H1 | 48px / 3rem | 300 | 1.2 |
+| H2 | 36px / 2.25rem | 300 | 1.25 |
+| H3 | 24px / 1.5rem | 300 | 1.3 |
+| H4 | 20px / 1.25rem | 300 | 1.4 |
 | Body | 16px / 1rem | 300 | 1.6 |
 | Small | 14px / 0.875rem | 300 | 1.5 |
 | Caption | 12px / 0.75rem | 300 | 1.4 |
@@ -216,13 +216,14 @@ color: #F2F4F2; /* Halo */
 border: 1px solid #063312; /* Depth */
 border-radius: 8px;
 padding: 12px 24px;
-font-weight: 600;
+font-weight: 300;
 ```
 
 **Primary Button (Hover)**
 ```css
-background: #172D1B; /* Grove */
-border-color: #172D1B; /* Grove */
+background: #61DB6B; /* Pulse */
+color: #063312; /* Depth */
+border-color: #61DB6B; /* Pulse */
 ```
 
 **Accent Button (sparsam – nur für eine zentrale CTA pro Seite)**
@@ -232,7 +233,7 @@ color: #063312; /* Depth */
 border: 1px solid #063312; /* Depth */
 border-radius: 8px;
 padding: 12px 24px;
-font-weight: 600;
+font-weight: 300;
 ```
 
 **Accent Button (Hover)**
@@ -249,7 +250,7 @@ color: #063312; /* Depth */
 border: 1px solid #AFCAAF; /* Sage */
 border-radius: 8px;
 padding: 12px 24px;
-font-weight: 600;
+font-weight: 300;
 ```
 
 **Secondary Button (Hover)**
@@ -265,7 +266,7 @@ background: transparent;
 color: #454F45; /* Root */
 border: none;
 padding: 12px 24px;
-font-weight: 600;
+font-weight: 300;
 ```
 
 **Ghost Button (Hover)**
@@ -281,7 +282,7 @@ color: #F2F4F2; /* Halo */
 border: 1px solid #ED6767; /* Coral Bold */
 border-radius: 8px;
 padding: 12px 24px;
-font-weight: 600;
+font-weight: 300;
 ```
 
 **Danger Button (Hover)**
@@ -343,14 +344,11 @@ color: #063312; /* Depth */
 **Input (Focus)**
 ```css
 border-color: #063312; /* Depth – dezent, kein Pulse */
-outline: 2px solid #063312; /* Depth */
-outline-offset: 1px;
 ```
 
 **Input (Error)**
 ```css
 border-color: #ED6767; /* Coral Bold */
-outline: 2px solid #ED6767; /* Coral Bold */
 ```
 
 **Input Placeholder**

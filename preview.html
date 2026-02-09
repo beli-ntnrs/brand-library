@@ -38,14 +38,21 @@
       --aeris-light: #C1E2F1;
       --aeris-std: #ACD6EF;
       --aeris-bold: #52B4D9;
+      --nimbus-light: #BBB9FF;
       --nimbus-std: #898AE3;
       --nimbus-bold: #5453CB;
       --muse-light: #F0D8FF;
+      --muse-std: #CBA8E8;
+      --muse-bold: #BD73ED;
       --coral-light: #FFD2D2;
+      --coral-std: #DBB0AF;
       --coral-bold: #ED6767;
       --solea-light: #FFF4D0;
+      --solea-std: #F9E8AF;
       --solea-bold: #FFDB76;
+      --cove-light: #F5DCBC;
       --cove-std: #E5C0A8;
+      --cove-bold: #F2AA7F;
     }
 
     /* ── Base ── */
@@ -65,10 +72,10 @@
       padding: 40px 24px;
     }
 
-    h1 { font-size: 48px; font-weight: 600; margin-bottom: 8px; }
-    h2 { font-size: 36px; font-weight: 600; margin: 56px 0 24px; border-bottom: 2px solid var(--sage); padding-bottom: 12px; }
-    h3 { font-size: 24px; font-weight: 600; margin: 32px 0 16px; }
-    h4 { font-size: 20px; font-weight: 600; margin: 24px 0 12px; }
+    h1 { font-size: 48px; font-weight: 300; margin-bottom: 8px; }
+    h2 { font-size: 36px; font-weight: 300; margin: 56px 0 24px; border-bottom: 1px solid var(--sage); padding-bottom: 12px; }
+    h3 { font-size: 24px; font-weight: 300; margin: 32px 0 16px; }
+    h4 { font-size: 20px; font-weight: 300; margin: 24px 0 12px; }
     p { font-size: 16px; margin-bottom: 12px; }
     small { font-size: 14px; color: var(--root); }
     .caption { font-size: 12px; color: var(--stone); }
@@ -90,7 +97,6 @@
 
     .component-label {
       font-size: 12px;
-      font-weight: 600;
       color: var(--stone);
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -121,7 +127,6 @@
     }
 
     .swatch-name {
-      font-weight: 600;
       font-size: 14px;
     }
 
@@ -131,10 +136,74 @@
       font-family: monospace;
     }
 
+    /* ── Green Gradient ── */
+    .gradient-strip {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      border: 1px solid var(--sage);
+    }
+
+    .gradient-cell {
+      height: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .gradient-cell span {
+      font-size: 12px;
+    }
+
+    .gradient-cell .g-hex {
+      font-size: 10px;
+      font-family: monospace;
+      opacity: 0.7;
+    }
+
+    /* ── Extended Palette Triples ── */
+    .ext-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .ext-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--sage);
+    }
+
+    .ext-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 56px;
+    }
+
+    .ext-info {
+      padding: 8px 12px;
+      background: white;
+    }
+
+    .ext-info .ext-name {
+      font-size: 14px;
+    }
+
+    .ext-info .ext-hexes {
+      font-size: 10px;
+      color: var(--stone);
+      font-family: monospace;
+    }
+
     /* ── Buttons ── */
     .btn {
       font-family: 'TWKLausanne', sans-serif;
-      font-weight: 600;
+      font-weight: 300;
       font-size: 16px;
       padding: 12px 24px;
       border-radius: 8px;
@@ -151,8 +220,9 @@
       border: 1px solid var(--depth);
     }
     .btn-primary:hover {
-      background: var(--grove);
-      border-color: var(--grove);
+      background: var(--pulse);
+      color: var(--depth);
+      border-color: var(--pulse);
     }
 
     .btn-accent {
@@ -196,6 +266,15 @@
       background: var(--depth);
       color: var(--coral-bold);
       border-color: var(--coral-bold);
+    }
+
+    /* ── Disabled ── */
+    .btn-disabled {
+      background: #BCC9BC;
+      color: var(--root);
+      border: 1px solid #BCC9BC;
+      cursor: not-allowed;
+      opacity: 1;
     }
 
     /* ── Links ── */
@@ -247,12 +326,10 @@
 
     .input-field:focus {
       border-color: var(--depth);
-      box-shadow: 0 0 0 2px var(--depth);
     }
 
     .input-field.input-error {
       border-color: var(--coral-bold);
-      box-shadow: 0 0 0 2px var(--coral-bold);
     }
 
     .input-group {
@@ -261,7 +338,6 @@
 
     .input-group label {
       display: block;
-      font-weight: 600;
       font-size: 14px;
       margin-bottom: 6px;
     }
@@ -282,7 +358,6 @@
     .badge {
       display: inline-block;
       font-size: 12px;
-      font-weight: 600;
       padding: 4px 12px;
       border-radius: 999px;
       border: 1px solid;
@@ -394,7 +469,9 @@
       border-color: var(--halo);
     }
     .dark-section .btn-primary:hover {
-      background: var(--sage);
+      background: var(--pulse);
+      color: var(--depth);
+      border-color: var(--pulse);
     }
 
     .dark-section .input-field {
@@ -404,7 +481,6 @@
     }
     .dark-section .input-field:focus {
       border-color: var(--halo);
-      box-shadow: 0 0 0 2px var(--halo);
     }
 
     /* ── Logo Section ── */
@@ -482,23 +558,23 @@
 
     <!-- ════════════ TYPOGRAPHY ════════════ -->
     <h2>Typography</h2>
-    <p>Font: TWKLausanne</p>
+    <p>Font: TWKLausanne · Headings immer 300 (nie bold)</p>
 
     <div class="type-row">
-      <span class="type-label">H1 · 48px · 600</span>
-      <span style="font-size:48px;font-weight:600;">Heading One</span>
+      <span class="type-label">H1 · 48px · 300</span>
+      <span style="font-size:48px;font-weight:300;">Heading One</span>
     </div>
     <div class="type-row">
-      <span class="type-label">H2 · 36px · 600</span>
-      <span style="font-size:36px;font-weight:600;">Heading Two</span>
+      <span class="type-label">H2 · 36px · 300</span>
+      <span style="font-size:36px;font-weight:300;">Heading Two</span>
     </div>
     <div class="type-row">
-      <span class="type-label">H3 · 24px · 600</span>
-      <span style="font-size:24px;font-weight:600;">Heading Three</span>
+      <span class="type-label">H3 · 24px · 300</span>
+      <span style="font-size:24px;font-weight:300;">Heading Three</span>
     </div>
     <div class="type-row">
-      <span class="type-label">H4 · 20px · 600</span>
-      <span style="font-size:20px;font-weight:600;">Heading Four</span>
+      <span class="type-label">H4 · 20px · 300</span>
+      <span style="font-size:20px;font-weight:300;">Heading Four</span>
     </div>
     <div class="type-row">
       <span class="type-label">Body · 16px · 300</span>
@@ -512,9 +588,35 @@
       <span class="type-label">Caption · 12px · 300</span>
       <span class="caption">Labels, Timestamps, Hilfetext</span>
     </div>
+    <div class="type-row">
+      <span class="type-label">Bold · 600</span>
+      <span style="font-weight:600;">Nur für Emphasis innerhalb von Fließtext</span>
+    </div>
 
     <!-- ════════════ COLORS ════════════ -->
     <h2>Colors</h2>
+
+    <h3>Green Scale</h3>
+    <div class="gradient-strip">
+      <div class="gradient-cell" style="background:#B5F5B7;color:#063312;">
+        <span>Ease</span><span class="g-hex">#B5F5B7</span>
+      </div>
+      <div class="gradient-cell" style="background:#92EF9A;color:#063312;">
+        <span>Bloom</span><span class="g-hex">#92EF9A</span>
+      </div>
+      <div class="gradient-cell" style="background:#61DB6B;color:#063312;">
+        <span>Pulse</span><span class="g-hex">#61DB6B</span>
+      </div>
+      <div class="gradient-cell" style="background:#063312;color:#F2F4F2;">
+        <span>Depth</span><span class="g-hex">#063312</span>
+      </div>
+      <div class="gradient-cell" style="background:#172D1B;color:#F2F4F2;">
+        <span>Grove</span><span class="g-hex">#172D1B</span>
+      </div>
+      <div class="gradient-cell" style="background:#0B1E0F;color:#F2F4F2;">
+        <span>Shade</span><span class="g-hex">#0B1E0F</span>
+      </div>
+    </div>
 
     <h3>Primary</h3>
     <div class="color-grid">
@@ -526,11 +628,12 @@
 
     <h3>Neutral</h3>
     <div class="color-grid">
-      <div class="swatch"><div class="swatch-color" style="background:#454F45;"></div><div class="swatch-info"><div class="swatch-name">Root</div><div class="swatch-hex">#454F45</div></div></div>
-      <div class="swatch"><div class="swatch-color" style="background:#7B847B;"></div><div class="swatch-info"><div class="swatch-name">Stone</div><div class="swatch-hex">#7B847B</div></div></div>
-      <div class="swatch"><div class="swatch-color" style="background:#AFCAAF;"></div><div class="swatch-info"><div class="swatch-name">Sage</div><div class="swatch-hex">#AFCAAF</div></div></div>
-      <div class="swatch"><div class="swatch-color" style="background:#D1E2D1;"></div><div class="swatch-info"><div class="swatch-name">Veil</div><div class="swatch-hex">#D1E2D1</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F2F4F2;"></div><div class="swatch-info"><div class="swatch-name">Halo</div><div class="swatch-hex">#F2F4F2</div></div></div>
       <div class="swatch"><div class="swatch-color" style="background:#DEECDC;"></div><div class="swatch-info"><div class="swatch-name">Mist</div><div class="swatch-hex">#DEECDC</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#D1E2D1;"></div><div class="swatch-info"><div class="swatch-name">Veil</div><div class="swatch-hex">#D1E2D1</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#AFCAAF;"></div><div class="swatch-info"><div class="swatch-name">Sage</div><div class="swatch-hex">#AFCAAF</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#7B847B;"></div><div class="swatch-info"><div class="swatch-name">Stone</div><div class="swatch-hex">#7B847B</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#454F45;"></div><div class="swatch-info"><div class="swatch-name">Root</div><div class="swatch-hex">#454F45</div></div></div>
     </div>
 
     <h3>Accent</h3>
@@ -541,13 +644,73 @@
     </div>
 
     <h3>Extended Palette</h3>
-    <div class="color-grid">
-      <div class="swatch"><div class="swatch-color" style="background:#52B4D9;"></div><div class="swatch-info"><div class="swatch-name">Aeris</div><div class="swatch-hex">#52B4D9</div></div></div>
-      <div class="swatch"><div class="swatch-color" style="background:#5453CB;"></div><div class="swatch-info"><div class="swatch-name">Nimbus</div><div class="swatch-hex">#5453CB</div></div></div>
-      <div class="swatch"><div class="swatch-color" style="background:#BD73ED;"></div><div class="swatch-info"><div class="swatch-name">Muse</div><div class="swatch-hex">#BD73ED</div></div></div>
-      <div class="swatch"><div class="swatch-color" style="background:#ED6767;"></div><div class="swatch-info"><div class="swatch-name">Coral</div><div class="swatch-hex">#ED6767</div></div></div>
-      <div class="swatch"><div class="swatch-color" style="background:#FFDB76;"></div><div class="swatch-info"><div class="swatch-name">Solea</div><div class="swatch-hex">#FFDB76</div></div></div>
-      <div class="swatch"><div class="swatch-color" style="background:#F2AA7F;"></div><div class="swatch-info"><div class="swatch-name">Cove</div><div class="swatch-hex">#F2AA7F</div></div></div>
+    <div class="ext-grid">
+      <div class="ext-card">
+        <div class="ext-strip">
+          <div style="background:#C1E2F1;"></div>
+          <div style="background:#ACD6EF;"></div>
+          <div style="background:#52B4D9;"></div>
+        </div>
+        <div class="ext-info">
+          <div class="ext-name">Aeris</div>
+          <div class="ext-hexes">#C1E2F1 · #ACD6EF · #52B4D9</div>
+        </div>
+      </div>
+      <div class="ext-card">
+        <div class="ext-strip">
+          <div style="background:#BBB9FF;"></div>
+          <div style="background:#898AE3;"></div>
+          <div style="background:#5453CB;"></div>
+        </div>
+        <div class="ext-info">
+          <div class="ext-name">Nimbus</div>
+          <div class="ext-hexes">#BBB9FF · #898AE3 · #5453CB</div>
+        </div>
+      </div>
+      <div class="ext-card">
+        <div class="ext-strip">
+          <div style="background:#F0D8FF;"></div>
+          <div style="background:#CBA8E8;"></div>
+          <div style="background:#BD73ED;"></div>
+        </div>
+        <div class="ext-info">
+          <div class="ext-name">Muse</div>
+          <div class="ext-hexes">#F0D8FF · #CBA8E8 · #BD73ED</div>
+        </div>
+      </div>
+      <div class="ext-card">
+        <div class="ext-strip">
+          <div style="background:#FFD2D2;"></div>
+          <div style="background:#DBB0AF;"></div>
+          <div style="background:#ED6767;"></div>
+        </div>
+        <div class="ext-info">
+          <div class="ext-name">Coral</div>
+          <div class="ext-hexes">#FFD2D2 · #DBB0AF · #ED6767</div>
+        </div>
+      </div>
+      <div class="ext-card">
+        <div class="ext-strip">
+          <div style="background:#FFF4D0;"></div>
+          <div style="background:#F9E8AF;"></div>
+          <div style="background:#FFDB76;"></div>
+        </div>
+        <div class="ext-info">
+          <div class="ext-name">Solea</div>
+          <div class="ext-hexes">#FFF4D0 · #F9E8AF · #FFDB76</div>
+        </div>
+      </div>
+      <div class="ext-card">
+        <div class="ext-strip">
+          <div style="background:#F5DCBC;"></div>
+          <div style="background:#E5C0A8;"></div>
+          <div style="background:#F2AA7F;"></div>
+        </div>
+        <div class="ext-info">
+          <div class="ext-name">Cove</div>
+          <div class="ext-hexes">#F5DCBC · #E5C0A8 · #F2AA7F</div>
+        </div>
+      </div>
     </div>
 
     <!-- ════════════ LOGOS ════════════ -->
@@ -624,6 +787,7 @@
       <button class="btn btn-secondary">Secondary</button>
       <button class="btn btn-ghost">Ghost</button>
       <button class="btn btn-danger">Danger</button>
+      <button class="btn btn-disabled" disabled>Disabled</button>
     </div>
 
     <h3>Button-Hierarchie</h3>
@@ -669,7 +833,7 @@
 
     <div class="input-group">
       <label>Focus</label>
-      <input type="text" class="input-field" value="Aktives Feld" style="border-color:var(--depth);box-shadow:0 0 0 2px var(--depth);">
+      <input type="text" class="input-field" value="Aktives Feld" style="border-color:var(--depth);">
     </div>
 
     <div class="input-group">
@@ -749,7 +913,7 @@
 
     <!-- ════════════ FOOTER ════════════ -->
     <div style="margin-top:64px;padding-top:24px;border-top:1px solid var(--sage);text-align:center;">
-      <p class="caption">Notioneers Brand Library · v2.0 · preview.html</p>
+      <p class="caption">Notioneers Brand Library · v2.1 · preview.html</p>
     </div>
 
   </div>

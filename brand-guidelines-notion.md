@@ -70,17 +70,17 @@
 
 | Gewicht | Verwendung |
 | --- | --- |
-| **300 (Regular)** | Fliesstext, UI-Elemente |
-| **600 (Bold)** | Überschriften, Buttons, Emphasis |
+| **300 (Regular)** | Fliesstext, UI-Elemente, Überschriften, Buttons |
+| **600 (Bold)** | Nur für Emphasis innerhalb von Fliesstext |
 
 **Grössen:**
 
 | Element | Grösse | Gewicht |
 | --- | --- | --- |
-| H1 | 48px | 600 |
-| H2 | 36px | 600 |
-| H3 | 24px | 600 |
-| H4 | 20px | 600 |
+| H1 | 48px | 300 |
+| H2 | 36px | 300 |
+| H3 | 24px | 300 |
+| H4 | 20px | 300 |
 | Body | 16px | 300 |
 | Small | 14px | 300 |
 | Caption | 12px | 300 |
@@ -181,7 +181,7 @@ Die UI ist minimalistisch und professionell. Neutrale Farben dominieren. Pulse w
 
 | Typ | Hintergrund | Text |
 | --- | --- | --- |
-| Primary → | Grove #172D1B | Halo #F2F4F2 |
+| Primary → | Pulse #61DB6B | Depth #063312 |
 | Accent → | Depth #063312 | Halo #F2F4F2 |
 | Secondary → | Veil #D1E2D1 | Depth #063312 |
 | Ghost → | Mist #DEECDC | Depth #063312 |
@@ -212,8 +212,8 @@ Die UI ist minimalistisch und professionell. Neutrale Farben dominieren. Pulse w
 | Zustand | Border | Hintergrund |
 | --- | --- | --- |
 | Standard | Stone #7B847B | Halo #F2F4F2 |
-| Focus | Depth #063312 (2px Outline) | Halo #F2F4F2 |
-| Error | Coral Bold #ED6767 (2px Outline) | Halo #F2F4F2 |
+| Focus | Depth #063312 | Halo #F2F4F2 |
+| Error | Coral Bold #ED6767 | Halo #F2F4F2 |
 | Placeholder-Text | Stone #7B847B | – |
 
 ### Badges & Tags
