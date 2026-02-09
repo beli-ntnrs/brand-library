@@ -19,12 +19,12 @@
 
 ### Primary Colors (Logo & Text)
 
-| Name | Hex | RGB | Verwendung |
-|------|-----|-----|------------|
-| **Depth** | `#063312` | rgb(6, 51, 18) | Primäre Schriftfarbe, Überschriften, Logo auf hellem Hintergrund |
-| **Halo** | `#F2F4F2` | rgb(242, 244, 242) | Primärer Hintergrund, Flächen, Sektionen |
-| **Bloom** | `#92EF9A` | rgb(146, 239, 154) | Logo auf dunklem Hintergrund, Markenakzent |
-| **Shade** | `#0B1E0F` | rgb(11, 30, 15) | Dunkler Hintergrund, Dark Mode |
+| Vorschau | Name | Hex | RGB | Verwendung |
+|----------|------|-----|-----|------------|
+| ![Depth](https://placehold.co/40x40/063312/063312) | **Depth** | `#063312` | rgb(6, 51, 18) | Primäre Schriftfarbe, Überschriften, Logo auf hellem Hintergrund |
+| ![Halo](https://placehold.co/40x40/F2F4F2/F2F4F2) | **Halo** | `#F2F4F2` | rgb(242, 244, 242) | Primärer Hintergrund, Flächen, Sektionen |
+| ![Bloom](https://placehold.co/40x40/92EF9A/92EF9A) | **Bloom** | `#92EF9A` | rgb(146, 239, 154) | Logo auf dunklem Hintergrund, Markenakzent |
+| ![Shade](https://placehold.co/40x40/0B1E0F/0B1E0F) | **Shade** | `#0B1E0F` | rgb(11, 30, 15) | Dunkler Hintergrund, Dark Mode |
 
 ### Logo-Kombinationen (NICHT ÄNDERN)
 
@@ -35,44 +35,35 @@ Dark Mode:   Bloom (#92EF9A) auf Shade (#0B1E0F)
 
 ### Neutral Colors
 
-| Name | Hex | Verwendung |
-|------|-----|------------|
-| **Root** | `#454F45` | Sekundärtext, Icons, dunkle Flächen |
-| **Stone** | `#7B847B` | Tertiärtext, Linien, subtile UI-Elemente |
-| **Sage** | `#AFCAAF` | Borders, Strokes, Trennlinien |
-| **Veil** | `#D1E2D1` | Hover-States (Secondary Button), subtile Container |
-| **Mist** | `#DEECDC` | Sekundäre Hintergründe, große Container |
-| **Halo** | `#F2F4F2` | Primärer Hintergrund |
+| Vorschau | Name | Hex | Verwendung |
+|----------|------|-----|------------|
+| ![Root](https://placehold.co/40x40/454F45/454F45) | **Root** | `#454F45` | Sekundärtext, Icons, dunkle Flächen |
+| ![Stone](https://placehold.co/40x40/7B847B/7B847B) | **Stone** | `#7B847B` | Tertiärtext, Linien, subtile UI-Elemente |
+| ![Sage](https://placehold.co/40x40/AFCAAF/AFCAAF) | **Sage** | `#AFCAAF` | Borders, Strokes, Trennlinien |
+| ![Veil](https://placehold.co/40x40/D1E2D1/D1E2D1) | **Veil** | `#D1E2D1` | Hover-States (Secondary Button), subtile Container |
+| ![Mist](https://placehold.co/40x40/DEECDC/DEECDC) | **Mist** | `#DEECDC` | Sekundäre Hintergründe, große Container |
+| ![Halo](https://placehold.co/40x40/F2F4F2/F2F4F2) | **Halo** | `#F2F4F2` | Primärer Hintergrund |
 
 ### Accent Colors (Interaktiv)
 
-| Name | Hex | Verwendung |
-|------|-----|------------|
-| **Pulse** | `#61DB6B` | Accent-CTAs (sparsam, max. 1x pro Bereich), Success-Borders |
-| **Grove** | `#172D1B` | Hover-States, Active-States, Dark-Mode-Container |
-| **Ease** | `#B5F5B7` | Success-Badges (immer mit Pulse-Border kombinieren) |
+| Vorschau | Name | Hex | Verwendung |
+|----------|------|-----|------------|
+| ![Pulse](https://placehold.co/40x40/61DB6B/61DB6B) | **Pulse** | `#61DB6B` | Accent-CTAs (sparsam, max. 1x pro Bereich), Success-Borders |
+| ![Grove](https://placehold.co/40x40/172D1B/172D1B) | **Grove** | `#172D1B` | Hover-States, Active-States, Dark-Mode-Container |
+| ![Ease](https://placehold.co/40x40/B5F5B7/B5F5B7) | **Ease** | `#B5F5B7` | Success-Badges (immer mit Pulse-Border kombinieren) |
 
 ### Extended Palette (Nur bei Bedarf)
 
 Nutze diese Farben sparsam für spezifische Use Cases:
 
-**Aeris (Blau)** – Informationen, Links
-- Light: `#C1E2F1` | Standard: `#ACD6EF` | Bold: `#52B4D9`
-
-**Nimbus (Violett)** – Sekundäre CTAs
-- Light: `#BBB9FF` | Standard: `#898AE3` | Bold: `#5453CB`
-
-**Muse (Pink)** – Dekorative Akzente
-- Light: `#F0D8FF` | Standard: `#CBA8E8` | Bold: `#BD73ED`
-
-**Coral (Rot)** – Fehler, Warnungen
-- Light: `#FFD2D2` | Standard: `#DBB0AF` | Bold: `#ED6767`
-
-**Solea (Gelb)** – Hinweise, Info-Boxen
-- Light: `#FFF4D0` | Standard: `#F9E8AF` | Bold: `#FFDB76`
-
-**Cove (Orange)** – Warme Akzente
-- Light: `#F5DCBC` | Standard: `#E5C0A8` | Bold: `#F2AA7F`
+| Name | Light | Standard | Bold | Verwendung |
+|------|-------|----------|------|------------|
+| **Aeris (Blau)** | ![](https://placehold.co/20x20/C1E2F1/C1E2F1) `#C1E2F1` | ![](https://placehold.co/20x20/ACD6EF/ACD6EF) `#ACD6EF` | ![](https://placehold.co/20x20/52B4D9/52B4D9) `#52B4D9` | Links, Informationen |
+| **Nimbus (Violett)** | ![](https://placehold.co/20x20/BBB9FF/BBB9FF) `#BBB9FF` | ![](https://placehold.co/20x20/898AE3/898AE3) `#898AE3` | ![](https://placehold.co/20x20/5453CB/5453CB) `#5453CB` | Sekundäre CTAs |
+| **Muse (Pink)** | ![](https://placehold.co/20x20/F0D8FF/F0D8FF) `#F0D8FF` | ![](https://placehold.co/20x20/CBA8E8/CBA8E8) `#CBA8E8` | ![](https://placehold.co/20x20/BD73ED/BD73ED) `#BD73ED` | Dekorative Akzente |
+| **Coral (Rot)** | ![](https://placehold.co/20x20/FFD2D2/FFD2D2) `#FFD2D2` | ![](https://placehold.co/20x20/DBB0AF/DBB0AF) `#DBB0AF` | ![](https://placehold.co/20x20/ED6767/ED6767) `#ED6767` | Fehler, Warnungen |
+| **Solea (Gelb)** | ![](https://placehold.co/20x20/FFF4D0/FFF4D0) `#FFF4D0` | ![](https://placehold.co/20x20/F9E8AF/F9E8AF) `#F9E8AF` | ![](https://placehold.co/20x20/FFDB76/FFDB76) `#FFDB76` | Hinweise, Info-Boxen |
+| **Cove (Orange)** | ![](https://placehold.co/20x20/F5DCBC/F5DCBC) `#F5DCBC` | ![](https://placehold.co/20x20/E5C0A8/E5C0A8) `#E5C0A8` | ![](https://placehold.co/20x20/F2AA7F/F2AA7F) `#F2AA7F` | Warme Akzente |
 
 ---
 
