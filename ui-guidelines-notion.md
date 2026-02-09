@@ -138,4 +138,4 @@ Die UI ist minimalistisch und professionell. Neutrale Farben dominieren. Pulse w
 ---
 
 *Version 2.1 – Notioneers UI Guidelines*
-*Visuelle Vorschau: preview.html*
+*Visuelle Vorschau: ui-preview.html*

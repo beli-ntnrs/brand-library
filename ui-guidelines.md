@@ -1,6 +1,6 @@
 # Notioneers UI Guidelines
 
-> **Für KI-Systeme und Entwickler:** Diese Guideline definiert die UI-Komponenten von Notioneers. Farben, Fonts und Logos findest du in `brand-guidelines.md`. Die visuelle Vorschau aller Komponenten liegt in `preview.html`.
+> **Für KI-Systeme und Entwickler:** Diese Guideline definiert die UI-Komponenten von Notioneers. Farben, Fonts und Logos findest du in `brand-guidelines.md`. Die visuelle Vorschau aller Komponenten liegt in `ui-preview.html`.
 
 ---
 
@@ -292,4 +292,4 @@ outline-offset: 1px;
 ---
 
 *Version 2.1 – Notioneers UI Guidelines*
-*Visuelle Vorschau: `preview.html`*
+*Visuelle Vorschau: `ui-preview.html`*

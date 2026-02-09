@@ -6,7 +6,8 @@
 |---|---|---|
 | `brand-guidelines.md` | Farben, Fonts, Logo, Icons, Tone of Voice | `brand-guidelines-notion.md` |
 | `ui-guidelines.md` | Buttons, Cards, Inputs, Badges, Dark Mode, Accessibility | `ui-guidelines-notion.md` |
-| `preview.html` | Visuelle Vorschau aller UI-Komponenten | – |
+| `brand-preview.html` | Vorschau: Farben, Fonts, Logos, Icons | – |
+| `ui-preview.html` | Vorschau: Buttons, Cards, Inputs, Badges, Dark Mode | – |
 
 ## Sync-Regeln
 
@@ -29,4 +30,5 @@ Jede Guideline-Datei hat eine Notion-Version. Beide müssen synchron bleiben.
 1. Änderung in der Markdown-Datei vornehmen
 2. Dieselbe Änderung in die Notion-Version übertragen (Notion-Format beachten)
 3. Beide Dateien zusammen committen
-4. Falls UI-Komponenten geändert wurden: auch `preview.html` aktualisieren
+4. Falls UI-Komponenten geändert wurden: auch `ui-preview.html` aktualisieren
+5. Falls Brand-Elemente (Farben, Fonts, Logos) geändert wurden: auch `brand-preview.html` aktualisieren
